@@ -15,6 +15,9 @@
         <module>cydmall-order</module>
         <module>cydmall-product</module>
         <module>cydmall-ware</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>cydmall-common</module>
     </modules>
 
 </project>
