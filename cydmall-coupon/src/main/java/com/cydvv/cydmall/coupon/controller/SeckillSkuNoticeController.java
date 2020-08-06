@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cydvv.cydmall.coupon.entity.SeckillSkuNoticeEntity;
 import com.cydvv.cydmall.coupon.service.SeckillSkuNoticeService;
-import com.cydvv.common.utils.PageUtils;
-import com.cydvv.common.utils.R;
+import com.cydvv.cydmall.common.utils.PageUtils;
+import com.cydvv.cydmall.common.utils.R;
 
 
 

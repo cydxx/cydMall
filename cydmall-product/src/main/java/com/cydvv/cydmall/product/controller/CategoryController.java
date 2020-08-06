@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cydvv.cydmall.product.entity.CategoryEntity;
 import com.cydvv.cydmall.product.service.CategoryService;
-import com.cydvv.common.utils.PageUtils;
-import com.cydvv.common.utils.R;
+import com.cydvv.cydmall.common.utils.PageUtils;
+import com.cydvv.cydmall.common.utils.R;
 
 
 

@@ -1,7 +1,7 @@
 package com.cydvv.cydmall.ware.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.cydvv.common.utils.PageUtils;
+import com.cydvv.cydmall.common.utils.PageUtils;
 import com.cydvv.cydmall.ware.entity.WareSkuEntity;
 
 import java.util.Map;

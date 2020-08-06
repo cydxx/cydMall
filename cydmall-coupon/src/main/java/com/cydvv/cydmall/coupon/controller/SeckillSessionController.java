@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cydvv.cydmall.coupon.entity.SeckillSessionEntity;
 import com.cydvv.cydmall.coupon.service.SeckillSessionService;
-import com.cydvv.common.utils.PageUtils;
-import com.cydvv.common.utils.R;
+import com.cydvv.cydmall.common.utils.PageUtils;
+import com.cydvv.cydmall.common.utils.R;
 
 
 

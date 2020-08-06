@@ -5,9 +5,9 @@ import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cydvv.common.utils.PageUtils;
-import com.cydvv.common.utils.Query;
-
+import com.cydvv.cydmall.common.utils.PageUtils;
+import com.cydvv.cydmall.common.utils.R;
+import com.cydvv.cydmall.common.utils.Query;
 import com.cydvv.cydmall.member.dao.MemberStatisticsInfoDao;
 import com.cydvv.cydmall.member.entity.MemberStatisticsInfoEntity;
 import com.cydvv.cydmall.member.service.MemberStatisticsInfoService;
