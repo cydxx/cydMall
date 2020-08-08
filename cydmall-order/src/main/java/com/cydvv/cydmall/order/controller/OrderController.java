@@ -5,6 +5,8 @@ import java.util.Map;
 
 import com.cydvv.cydmall.common.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,11 +25,20 @@ import com.cydvv.cydmall.common.utils.PageUtils;
  * @email cydvvxx@sina.com
  * @date 2020-08-06 01:37:46
  */
+@RefreshScope
 @RestController
 @RequestMapping("order/order")
 public class OrderController {
     @Autowired
     private OrderService orderService;
+
+    @Value("${abc}")
+    String va;
+
+    @RequestMapping("/test")
+    public R test(){
+        return R.ok().put("abc", va);
+    }
 
     /**
      * 列表

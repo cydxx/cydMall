@@ -2,11 +2,19 @@ server:
   port: 9000
 
 spring:
-  datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://192.168.0.16:3306/cydmall_oms
-    driver-class-name: com.mysql.jdbc.Driver
+#  datasource:
+#    username: root
+#    password: root
+#    url: jdbc:mysql://192.168.0.16:3306/cydmall_oms
+#    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: cydmall-order
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.0.16:8848
+
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
