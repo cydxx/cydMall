@@ -18,6 +18,7 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>cydmall-common</module>
+        <module>cydmall-gateway</module>
     </modules>
 
 </project>

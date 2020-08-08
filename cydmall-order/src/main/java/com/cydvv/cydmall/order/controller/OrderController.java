@@ -32,7 +32,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @Value("${abc}")
+    @Value("${abcd}")
     String va;
 
     @RequestMapping("/test")

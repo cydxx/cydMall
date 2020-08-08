@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.cydvv.cydmall.common.utils.PageUtils;
 import com.cydvv.cydmall.common.utils.R;
+import com.cydvv.cydmall.coupon.openapi.CouponApiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +30,15 @@ import com.cydvv.cydmall.coupon.service.CouponService;
 public class CouponController {
     @Autowired
     private CouponService couponService;
+    @Autowired
+    private CouponApiService couponApiService;
+
+
+    @RequestMapping("/openapi")
+    public R openapi(){
+        R test = couponApiService.test();
+        return R.ok().put("test", test);
+    }
 
     /**
      * 列表
