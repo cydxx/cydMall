@@ -1,5 +1,6 @@
 package com.cydvv.cydmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -23,7 +24,7 @@ public class SkuInfoEntity implements Serializable {
 	/**
 	 * skuId
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long skuId;
 	/**
 	 * spuId

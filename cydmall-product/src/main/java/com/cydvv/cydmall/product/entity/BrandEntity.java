@@ -1,5 +1,6 @@
 package com.cydvv.cydmall.product.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -22,7 +23,7 @@ public class BrandEntity implements Serializable {
 	/**
 	 * 品牌id
 	 */
-	@TableId
+	@TableId(type = IdType.AUTO)
 	private Long brandId;
 	/**
 	 * 品牌名

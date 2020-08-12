@@ -2,6 +2,7 @@ package com.cydvv.cydmall.product.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -39,15 +40,18 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
         List<CategoryEntity> collect = categoryEntities.stream()
                 .filter(categoryEntity -> categoryEntity.getParentCid() == 0)
-                .map(categoryEntity -> {
+                .peek(categoryEntity -> {
                     categoryEntity.setChildren(getChildCategory(categoryEntity,categoryEntities));
-                    return categoryEntity;
+                    //return categoryEntity;
                 })
                 .sorted((cat1, cat2) -> (cat1.getSort() == null ? 0 : cat1.getSort()) - (cat2.getSort() == null ? 0 : cat2.getSort()))
                 .collect(Collectors.toList());
-
-
         return collect;
+    }
+
+    @Override
+    public void deleteCategoryByIds(Long[] catIds) {
+        baseMapper.deleteBatchIds(Arrays.asList(catIds));
     }
 
     /**
@@ -57,14 +61,13 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
      * @return
      */
     private List<CategoryEntity> getChildCategory(CategoryEntity categoryEntity,List<CategoryEntity> categoryEntities){
-        List<CategoryEntity> collect = categoryEntities.stream().filter(cate -> categoryEntity.getCatId() == cate.getParentCid())
-                .map(catac -> {
+        return categoryEntities.stream().filter(cate -> categoryEntity.getCatId().equals(cate.getParentCid()))
+                .peek(catac -> {
                     catac.setChildren(getChildCategory(catac, categoryEntities));
-                    return catac;
+                    //return catac;
                 })
                 .sorted((cat1, cat2) -> (cat1.getSort() == null ? 0 : cat1.getSort()) - (cat2.getSort() == null ? 0 : cat2.getSort()))
                 .collect(Collectors.toList());
-        return collect;
     }
 
 }
